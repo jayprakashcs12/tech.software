@@ -1,4 +1,9 @@
+.pro-container {
+    margin: 25px 0;
+}
+
 .pro-head {
     text-align: center;
     font-size: 2rem;
+    color: var(--color14);
 }

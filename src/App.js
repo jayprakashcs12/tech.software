@@ -1,28 +1,24 @@
 import React, { useState } from 'react';
+import { RoutesComponents } from './assets/data/data';
 import { Route, Routes } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import Footer from './components/common/Footer';
 import Header from './components/common/Header';
-import { RoutesComponents } from "./assets/data/data";
-import 'react-toastify/dist/ReactToastify.css';
+import Footer from './components/common/Footer';
 
 const App = () => {
 
-  let [theme, setTheme] = useState('light');
+  let [color, setColor] = useState('white');
 
   return (
-
-    <React.Fragment>
-      <ToastContainer position="top-center" autoClose={5000} className="pro-toast" />
-      <Header theme={theme} setTheme={setTheme} />
+    <div style={{ backgroundColor: color, minHeight: '100vh' }}>
+      <Header color={color} setColor={setColor} />
       <Routes>
-        {RoutesComponents.map((route, i) => (
-          <Route key={i} path={route.path} element={<route.component theme={theme} />} />
+        {RoutesComponents.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
         ))}
       </Routes>
-      <Footer theme={theme} />
-    </React.Fragment>
-  )
-}
+      <Footer color={color} setColor={setColor} />
+    </div>
+  );
+};
 
 export default App;
