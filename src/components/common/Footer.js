@@ -6,9 +6,11 @@ const Footer = () => {
     return (
 
         <React.Fragment>
-            <Container className='pro-container'>
-                <h1 className='pro-head'>Footer</h1>
-            </Container>
+            <footer>
+                <Container className='pro-container'>
+                    <h1 className='pro-head'>Footer</h1>
+                </Container>
+            </footer>
         </React.Fragment>
     )
 }
