@@ -10,6 +10,7 @@ function Header({ setColor }) {
 
     const handleColorChange = (value) => {
         setSelectedColor(value);
+        setExpand(false);
         setColor(value);
     };
 
@@ -17,20 +18,17 @@ function Header({ setColor }) {
         setColor(selectedColor);
     }, []);
 
-    const navLinkClassName = `pro-button links nav-link`;
-    const navStyle = { fontWeight: "normal" };
-
     return (
         <Navbar expanded={expand} expand="lg" collapseOnSelect sticky="top" className={`pro-navbar main-navbar`}>
             <Container className="nav-content" onClick={e => e.stopPropagation()}>
                 <Navbar.Brand>
                     <h3>Software</h3>
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav" onClick={() => setExpand(!expand)}>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => setExpand(!expand)} />
+                <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         {NavRoutes.map((link, i) => (
-                            <NavLink key={i} to={link.navTo} style={navStyle} className={navLinkClassName} onClick={() => setExpand(false)}>
+                            <NavLink key={i} to={link.navTo} className="links nav-link" onClick={() => setExpand(false)}>
                                 {link.navText}
                             </NavLink>
                         ))}
