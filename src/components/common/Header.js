@@ -5,10 +5,9 @@ import { NavLink } from 'react-router-dom';
 
 function Header({ setColor }) {
 
-    const [selectedColor, setSelectedColor] = useState('Blue');
-    const [expand, setExpand] = useState(false);
-
-    const handleColorChange = (value) => {
+    let [expand, setExpand] = useState(false),
+    [selectedColor, setSelectedColor] = useState('Blue'),
+    handleColorChange = (value) => {
         setSelectedColor(value);
         setExpand(false);
         setColor(value);
@@ -19,7 +18,7 @@ function Header({ setColor }) {
     }, []);
 
     return (
-        <Navbar expanded={expand} expand="lg" collapseOnSelect sticky="top" className={`pro-navbar main-navbar`}>
+        <Navbar expanded={expand} expand="lg" collapseOnSelect sticky="top" className="pro-navbar main-navbar">
             <Container className="nav-content" onClick={e => e.stopPropagation()}>
                 <Navbar.Brand>
                     <h3>Software</h3>
@@ -37,7 +36,7 @@ function Header({ setColor }) {
                         <NavDropdown title={selectedColor} id="collasible-nav-dropdown" className={`nav-link bg-${selectedColor}`}>
                             {colorsName.map((color) => (
                                 <NavDropdown.Item key={color.value} onClick={() => handleColorChange(color.value)}>
-                                    {color.value}
+                                    {color.name}
                                 </NavDropdown.Item>
                             ))}
                         </NavDropdown>
