@@ -6,7 +6,7 @@ import { RoutesComponents } from './assets/data/data';
 
 const App = () => {
 
-  const [selectColor, setSelectColor] = useState('#99B898');
+  let [selectColor, setSelectColor] = useState('#99B898');
 
   return (
     <div style={{ backgroundColor: selectColor, minHeight: '100vh' }}>

@@ -1,0 +1,11 @@
+@media only screen and (max-width: 991.9px) {
+
+    .dropdown-menu.show {
+        width: 50px !important;
+        margin: 0 auto !important;
+    }
+
+    .pro-navbar {
+        text-align: center;
+    }
+}
