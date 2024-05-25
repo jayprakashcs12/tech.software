@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import { RoutesComponents } from './assets/data/data';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
+import { RoutesComponents } from './assets/data/data';
 
 const App = () => {
 
-  let [color, setColor] = useState('white');
+  const [selectColor, setSelectColor] = useState('#99B898');
 
   return (
-    <div style={{ backgroundColor: color, minHeight: '100vh' }}>
-      <Header color={color} setColor={setColor} />
+    <div style={{ backgroundColor: selectColor, minHeight: '100vh' }}>
+      <Header selectColor={selectColor} setSelectColor={setSelectColor} />
       <Routes>
         {RoutesComponents.map((route, index) => (
           <Route key={index} path={route.path} element={route.element} />
         ))}
       </Routes>
-      <Footer color={color} setColor={setColor} />
+      <Footer selectColor={selectColor} setSelectColor={setSelectColor} />
     </div>
   );
 };

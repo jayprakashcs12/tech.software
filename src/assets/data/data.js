@@ -5,9 +5,11 @@ import { BsWhatsapp } from "react-icons/bs";
 import { FiPhone } from "react-icons/fi";
 
 export let colorsName = [
-    { value: 'Red', name: 'Red' }, { value: 'Blue', name: 'Blue' }, { value: 'Green', name: 'Green' }, { value: 'Orange', name: 'Orange' },
-    { value: 'Purple', name: 'Purple' }, { value: 'Cyan', name: 'Cyan' }, { value: 'Magenta', name: 'Magenta' }, { value: 'Pink', name: 'Pink' },
-    { value: 'Teal', name: 'Teal' }
+    { hex: '#99B898', name: 'Greenish' },
+    { hex: '#FECEA8', name: 'Peach' },
+    { hex: '#FF847C', name: 'Coral' },
+    { hex: '#E84A5F', name: 'Pink' },
+    { hex: '#2A363B', name: 'Dark Grey' }
 ];
 
 export let Contacts = { 
@@ -26,5 +28,5 @@ export let NavRoutes = [
 ];
 
 export let RoutesComponents = [
-    { path: '/', element: <Home /> }, { path: '/about-us', element: <About /> },
+    { path: '/', element: <Home /> }, { path: '/about-us', element: <About /> }
 ];
