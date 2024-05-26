@@ -34,3 +34,7 @@
 .dropdown-item:active {
     background-color: #fff !important;
 }
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
