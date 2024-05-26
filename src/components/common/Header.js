@@ -30,8 +30,8 @@ const Header = ({ selectColor, setSelectColor }) => {
                     <Nav>
                         <NavDropdown title={<div className="circle-dropDown title-dropDown" style={{ backgroundColor: selectColor }}></div>} 
                             id="collasible-nav-dropdown" className="nav-link">
-                            {colorsName.map((color, index) => (
-                                <NavDropdown.Item key={index} onClick={() => handleChange(color.hex)}>
+                            {colorsName.map((color, i) => (
+                                <NavDropdown.Item key={i} onClick={() => handleChange(color.hex)}>
                                     <div className="circle-dropDown" style={{ backgroundColor: color.hex }}></div>
                                 </NavDropdown.Item>
                             ))}
